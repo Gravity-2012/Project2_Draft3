@@ -61,7 +61,6 @@
     </div>
     <div class="container">
         <div id="borderDemo"><div id="map"></div></div>
-        <!-- <div id="map"></div> -->
       <div class="row margin-top-50">
         <div class="col-md-2">
           <aside class="filters">
@@ -72,33 +71,27 @@
                   <div class="form-group">
                     <ul class="list-group" id="filters">
                       <li class="filter list-group-item">
+                        <!-- trailName -->
                         <label for="trailname">Enter Trail Name</label>
                         <input class="form-control" id="trailname" type="text" placeholder="Sky Pond">
                       </li>
                       <li class="filter list-group-item">
+                        <!-- city -->
                         <label for="city">Enter City</label>
                         <input class="form-control" id="city" type="text" placeholder="Estes Park">
                       </li>
                       <li class="filter list-group-item">
-                        <label for="country">Enter Length (Miles)</label>
-                        <select id="length" onchange="handleLengthChange(this)">
-                          <option value="0-10">0 - 10</option>
-                          <option value="11-20">11 - 20</option>
-                          <option value="21-30">21 - 30</option>
-                          <option value="31-1000">31+</option>
-                        </select>
-                      </li>
-                      <li class="filter list-group-item">
+                        <!-- difficulty -->
                         <label for="difficulty">Enter Difficulty</label>
                         <select id="difficulty" onchange="handleDifficultyChange(this)">
                           <option value="greenBlue">Beginner</option>
-                          <option value="blue">Easy</option>
-                          <option value="blueBlack">Normal</option>
-                          <option value="black">Hard</option>
-                          <option value="dBlack">Extreme</option>
+                          <option value="blue">Normal</option>
+                          <option value="blueBlack">Hard</option>
+                          <option value="black">Extreme</option>
                         </select>
                       </li>
                       <li class="filter list-group-item">
+                        <!-- stars or ratings -->
                         <label for="stars">Enter Rating</label>
                         <input class="form-control" id="stars" type="texy" placeholder="4.5">
                       </li>
@@ -128,10 +121,35 @@
         </div>
       </div>
     </div>
-
- 
- 
   </div>
+
+    <!-- Additional Library - simplyScroll -->
+    <div class = simple-scroll-list>
+    <ul id="scroller">
+      <li><img src="static/images/lake.jpeg" width="290" height="200"></li>
+      <li><img src="static/images/standing.jpeg" width="290" height="200"></li>
+      <li><img src="static/images/Spruce_Forest.jpg" width="290" height="200"></li>
+    </ul>   
+  </div>
+
+
+    <script type="text/javascript" 
+    src="http://ajax.googleapis.com/ajax/libs/jquery/1.6/jquery.min.js">
+    </script>
+    <script type="text/javascript" src="jquery.simplyscroll.js"></script>
+    <link rel="stylesheet" href="jquery.simplyscroll.css" media="all" 
+    type="text/css">
+
+    <script type="text/javascript">
+    (function($) {
+	          $(function() { //on DOM ready 
+    		            $("#scroller").simplyScroll();
+	          });
+    })(jQuery);
+  </script>
+
+
+
   <script type="text/javascript" src="static/js/config.js"></script>
   <script type="text/javascript" src="static/js/map.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/4.11.0/d3.js"></script>
