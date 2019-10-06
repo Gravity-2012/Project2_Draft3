@@ -10,24 +10,28 @@
   <link rel="stylesheet" href="static/css/style.css">
 
 
-    <!-- Leaflet JS & CSS -->
-    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.3.3/dist/leaflet.css"
-    integrity="sha512-Rksm5RenBEKSKFjgI3a41vrjkw4EVPlJ3+OiI65vTjIdo9brlAacEuKOiQ5OFh7cOI1bkDwLqdLw3Zg0cRJAAQ=="
-    crossorigin=""/>
-    <script src="https://unpkg.com/leaflet@1.3.3/dist/leaflet.js"
-    integrity="sha512-tAGcCfR4Sc5ZP5ZoVz0quoZDYX5aCtEm/eu1KhSLj2c9eFrylXZknQYmxUssFaVJKvvc0dJQixhGjG2yXWiV9Q=="
-    crossorigin=""></script>
+  <!-- AOS - Animate on scroll library *Library we haven't used-->
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+
+  <!-- Leaflet JS & CSS -->
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.3.3/dist/leaflet.css"
+  integrity="sha512-Rksm5RenBEKSKFjgI3a41vrjkw4EVPlJ3+OiI65vTjIdo9brlAacEuKOiQ5OFh7cOI1bkDwLqdLw3Zg0cRJAAQ=="
+  crossorigin=""/>
+  <script src="https://unpkg.com/leaflet@1.3.3/dist/leaflet.js"
+  integrity="sha512-tAGcCfR4Sc5ZP5ZoVz0quoZDYX5aCtEm/eu1KhSLj2c9eFrylXZknQYmxUssFaVJKvvc0dJQixhGjG2yXWiV9Q=="
+  crossorigin=""></script>
 ​
-    <!-- d3 JS -->
-    <script src="https://d3js.org/d3.v4.min.js"></script>
+  <!-- d3 JS -->
+  <script src="https://d3js.org/d3.v4.min.js"></script>
 ​
-    <!-- Marker Cluster JS & CSS -->
-    <script type="text/javascript" src="https://unpkg.com/leaflet.markercluster@1.0.3/dist/leaflet.markercluster.js"></script>
-    <link rel="stylesheet" type="text/css" href="https://unpkg.com/leaflet.markercluster@1.0.3/dist/MarkerCluster.css">
-    <link rel="stylesheet" type="text/css" href="https://unpkg.com/leaflet.markercluster@1.0.3/dist/MarkerCluster.Default.css">
+  <!-- Marker Cluster JS & CSS -->
+  <script type="text/javascript" src="https://unpkg.com/leaflet.markercluster@1.0.3/dist/leaflet.markercluster.js"></script>
+  <link rel="stylesheet" type="text/css" href="https://unpkg.com/leaflet.markercluster@1.0.3/dist/MarkerCluster.css">
+  <link rel="stylesheet" type="text/css" href="https://unpkg.com/leaflet.markercluster@1.0.3/dist/MarkerCluster.Default.css">
 ​
-    <!-- Our CSS -->
-    <link rel="stylesheet" type="text/css" href="static/css/style.css">
+  <!-- Our CSS -->
+  <link rel="stylesheet" type="text/css" href="static/css/style.css">
 
 
 </head>
@@ -56,8 +60,8 @@
       </div>
     </nav>
     <div class="hero text-center">
-      <h1>Into the Trail</h1>
-      <h3>"You're off to great places, today is your date. Your mountain is waiting, so get on your way." ~Dr. Seuss</h3>
+      <h1><div data-aos="flip-left">Into the Trail</div></h1>
+      <h3><div data-aos="zoom-in-up">"You're off to great places, today is your date. Your mountain is waiting, so get on your way." ~Dr. Seuss</div></h3>
     </div>
     <div class="container">
         <div id="borderDemo"><div id="map"></div></div>
@@ -121,33 +125,35 @@
         </div>
       </div>
     </div>
+
+
   </div>
 
-    <!-- Additional Library - simplyScroll -->
-    <div class = simple-scroll-list>
-    <ul id="scroller">
-      <li><img src="static/images/lake.jpeg" width="290" height="200"></li>
-      <li><img src="static/images/standing.jpeg" width="290" height="200"></li>
-      <li><img src="static/images/Spruce_Forest.jpg" width="290" height="200"></li>
-    </ul>   
-  </div>
+  <!-- AOS - Animate on scroll library -->
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script>
+    AOS.init({
+  // Global settings:
+  disable: false, // accepts following values: 'phone', 'tablet', 'mobile', boolean, expression or function
+  startEvent: 'DOMContentLoaded', // name of the event dispatched on the document, that AOS should initialize on
+  initClassName: 'aos-init', // class applied after initialization
+  animatedClassName: 'aos-animate', // class applied on animation
+  useClassNames: false, // if true, will add content of `data-aos` as classes on scroll
+  disableMutationObserver: false, // disables automatic mutations' detections (advanced)
+  debounceDelay: 50, // the delay on debounce used while resizing window (advanced)
+  throttleDelay: 99, // the delay on throttle used while scrolling the page (advanced)
+  
 
-
-    <script type="text/javascript" 
-    src="http://ajax.googleapis.com/ajax/libs/jquery/1.6/jquery.min.js">
-    </script>
-    <script type="text/javascript" src="jquery.simplyscroll.js"></script>
-    <link rel="stylesheet" href="jquery.simplyscroll.css" media="all" 
-    type="text/css">
-
-    <script type="text/javascript">
-    (function($) {
-	          $(function() { //on DOM ready 
-    		            $("#scroller").simplyScroll();
-	          });
-    })(jQuery);
+  // Settings that can be overridden on per-element basis, by `data-aos-*` attributes:
+  offset: 120, // offset (in px) from the original trigger point
+  delay: 0, // values from 0 to 3000, with step 50ms
+  duration: 400, // values from 0 to 3000, with step 50ms
+  easing: 'ease', // default easing for AOS animations
+  once: false, // whether animation should happen only once - while scrolling down
+  mirror: false, // whether elements should animate out while scrolling past them
+  anchorPlacement: 'top-bottom', // defines which position of the element regarding to window should trigger the animation
+});
   </script>
-
 
 
   <script type="text/javascript" src="static/js/config.js"></script>

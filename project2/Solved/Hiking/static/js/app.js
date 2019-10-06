@@ -91,11 +91,5 @@ press.on("click", function() {
 })
 
 
-var $ = require('jquery');
-require('jquery-simplyscroll');
-
-$("#scroller").simplyScroll({
-  speed: 1
-});
 
 
